@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Location Memo - フィールドワーク記録アプリのプライバシーポリシー">
+    <meta name="keywords" content="Location Memo, プライバシーポリシー, フィールドワーク, アプリ">
+    <title>プライバシーポリシー | Location Memo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2196f3;
+            --primary-dark: #1976d2;
+            --primary-light: #bbdefb;
+            --accent-color: #00bcd4;
+            --text-primary: #212121;
+            --text-secondary: #757575;
+            --background: #fafafa;
+            --surface: #ffffff;
+            --border-color: #e0e0e0;
+            --gradient-start: #667eea;
+            --gradient-end: #764ba2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* Hero Header */
+        .hero {
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .app-icon svg {
+            width: 48px;
+            height: 48px;
+            fill: white;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: var(--surface);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            padding: 12px 24px;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            border-radius: 30px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h2 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid;
+            border-image: linear-gradient(90deg, var(--gradient-start), var(--gradient-end)) 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2 .icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        h2 .icon svg {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        h3 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 24px 0 12px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 16px;
+        }
+
+        ul li {
+            color: var(--text-secondary);
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 50%;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+            border-left: 4px solid var(--gradient-start);
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--text-primary);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table th {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .data-table tr:nth-child(even) {
+            background: rgba(102, 126, 234, 0.03);
+        }
+
+        .data-table tr:hover {
+            background: rgba(102, 126, 234, 0.08);
+        }
+
+        .data-table td {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        footer .app-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        footer .copyright {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--primary-light);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .contact-item a {
+            color: var(--gradient-start);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--gradient-start);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 12px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .card:nth-child(2) { animation-delay: 0.1s; }
+        .card:nth-child(3) { animation-delay: 0.2s; }
+        .card:nth-child(4) { animation-delay: 0.3s; }
+        .card:nth-child(5) { animation-delay: 0.4s; }
+        .card:nth-child(6) { animation-delay: 0.5s; }
+        .card:nth-child(7) { animation-delay: 0.6s; }
+        .card:nth-child(8) { animation-delay: 0.7s; }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <div class="app-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+            </div>
+            <h1>プライバシーポリシー</h1>
+            <p class="subtitle">Location Memo - フィールドワーク記録アプリ</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <p class="last-updated">最終更新日: 2026年1月8日</p>
+
+        <section class="card">
+            <h2>
+                <span class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                </span>
+                はじめに
+            </h2>
+            <p>Location Memo（以下「本アプリ」）は、フィールドワーク等の野外調査の記録を効率化するためのアプリケーションです。本プライバシーポリシーでは、本アプリがどのような情報を収集し、どのように使用・保護するかについて説明いたします。</p>
+            <div class="highlight-box">
+                <p>本アプリは、お客様のプライバシーを尊重し、個人情報の保護に努めています。</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>
+                <span class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                </span>
+                収集する情報
+            </h2>
+            
+            <h3>1. ユーザーが提供する情報</h3>
+            <table class="data-table">
+                <tr>
+                    <th>情報の種類</th>
+                    <th>目的</th>
+                </tr>
+                <tr>
+                    <td>メールアドレス</td>
+                    <td>アカウント認証、パスワードリセット</td>
+                </tr>
+                <tr>
+                    <td>アカウント情報</td>
+                    <td>認証・ログイン機能の提供</td>
+                </tr>
+                <tr>
+                    <td>メモ・テキストデータ</td>
+                    <td>フィールドワーク記録の保存・管理</td>
+                </tr>
+                <tr>
+                    <td>写真・画像データ</td>
+                    <td>地図・調査記録への添付</td>
+                </tr>
+                <tr>
+                    <td>音声データ</td>
+                    <td>音声メモの録音・保存</td>
+                </tr>
+            </table>
+
+            <h3>2. 自動的に収集される情報</h3>
+            <ul>
+                <li>デバイス情報（OSバージョン、デバイスモデル等）</li>
+                <li>アプリの利用状況（エラーログ、クラッシュレポート）</li>
+                <li>Firebase Analytics による匿名の利用統計</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>
+                <span class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                </span>
+                情報の利用目的
+            </h2>
+            <p>収集した情報は、以下の目的のために利用します：</p>
+            <ul>
+                <li>本アプリのサービス提供およびメンテナンス</li>
+                <li>ユーザーアカウントの認証および管理</li>
+                <li>フィールドワーク記録データのクラウド同期</li>
+                <li>AI機能（画像判別、音声文字起こし）の提供</li>
+                <li>アプリの改善およびバグ修正</li>
+                <li>ユーザーサポートの提供</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>
+                <span class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                </span>
+                データの保護
+            </h2>
+            <p>お客様のデータを保護するため、以下のセキュリティ対策を講じています：</p>
+            <ul>
+                <li>Firebase Authentication による安全な認証</li>
+                <li>Cloud Firestore / Firebase Storage による暗号化されたデータ保存</li>
+                <li>通信時のSSL/TLS暗号化</li>
+                <li>アクセス権限の厳格な管理</li>
+            </ul>
+            <div class="highlight-box">
+                <p>クラウドに保存されるデータは、Googleのセキュリティ基準に準拠して保護されています。</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>
+                <span class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                </span>
+                第三者サービス
+            </h2>
+            <p>本アプリでは、以下の第三者サービスを利用しています：</p>
+            <table class="data-table">
+                <tr>
+                    <th>サービス名</th>
+                    <th>提供元</th>
+                    <th>用途</th>
+                </tr>
+                <tr>
+                    <td>Firebase Authentication</td>
+                    <td>Google LLC</td>
+                    <td>ユーザー認証</td>
+                </tr>
+                <tr>
+                    <td>Cloud Firestore</td>
+                    <td>Google LLC</td>
+                    <td>データ保存・同期</td>
+                </tr>
+                <tr>
+                    <td>Firebase Storage</td>
+                    <td>Google LLC</td>
+                    <td>画像・音声ファイル保存</td>
+                </tr>
+                <tr>
+                    <td>Google Generative AI (Gemini)</td>
+                    <td>Google LLC</td>
+                    <td>AI機能（画像判別・文字起こし）</td>
+                </tr>
+            </table>
+            <p>各サービスのプライバシーポリシーについては、それぞれの提供元のウェブサイトをご確認ください。</p>
+        </section>
+
+        <section class="card">
+            <h2>
+                <span class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </span>
+                デバイス権限
+            </h2>
+            <p>本アプリは、以下のデバイス権限を使用します：</p>
+            <table class="data-table">
+                <tr>
+                    <th>権限</th>
+                    <th>用途</th>
+                </tr>
+                <tr>
+                    <td>カメラ</td>
+                    <td>調査記録用の写真撮影</td>
+                </tr>
+                <tr>
+                    <td>マイク</td>
+                    <td>音声メモの録音</td>
+                </tr>
+                <tr>
+                    <td>ストレージ</td>
+                    <td>地図画像・写真・音声データの保存</td>
+                </tr>
+                <tr>
+                    <td>インターネット</td>
+                    <td>クラウド同期・AI機能・認証</td>
+                </tr>
+            </table>
+            <p>これらの権限は、お客様がアプリの機能を使用する際にのみ使用され、バックグラウンドでの不正なアクセスは行いません。</p>
+        </section>
+
+        <section class="card">
+            <h2>
+                <span class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                </span>
+                データの削除
+            </h2>
+            <p>ユーザーは、以下の方法でデータを削除することができます：</p>
+            <ul>
+                <li>アプリ内の設定メニューからアカウントを削除</li>
+                <li>開発者へ直接連絡してデータ削除を依頼</li>
+            </ul>
+            <p>アカウント削除後、関連するすべてのデータは30日以内にサーバーから完全に削除されます。</p>
+        </section>
+
+        <section class="card">
+            <h2>
+                <span class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/></svg>
+                </span>
+                プライバシーポリシーの変更
+            </h2>
+            <p>本プライバシーポリシーは、必要に応じて変更されることがあります。重要な変更がある場合は、アプリ内通知またはメールでお知らせします。</p>
+            <p>変更後もアプリを継続して利用された場合、新しいプライバシーポリシーに同意したものとみなされます。</p>
+        </section>
+
+        <section class="card">
+            <h2>
+                <span class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </span>
+                お問い合わせ
+            </h2>
+            <p>本プライバシーポリシーに関するご質問やお問い合わせは、以下までご連絡ください。</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    <span>開発者: akiii2024</span>
+                </div>
+                <div class="contact-item">
+                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <a href="https://github.com/akiii2024/location_memo" target="_blank" rel="noopener noreferrer">GitHub: akiii2024/location_memo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p class="app-name">Location Memo</p>
+        <p class="copyright">© 2026 akiii2024. All rights reserved.</p>
+    </footer>
+</body>
+</html>
